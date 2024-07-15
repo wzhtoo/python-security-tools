@@ -1,0 +1,24 @@
+# PACKET_SNIFFER
+### CAPTURE & FILTER DATA
+
+- scapy has a sniffer function.
+- Can capture data sent to/from iface.
+- Can call a function specified in prn on each packet.
+
+### Syntax:
+import scapy.all as scapy
+scapy.sniff(iface=[interface], prn=[cal back function]
+
+# ARP_Spoof + Packet_sniffer
+- Target a computer on the same network
+- arp_spoof to redirect flow of packets (becomeMITM)
+- Packet_sniffer to see `URLs.usernames and password` sent by targe.
+
+# Strings VS Byte-objects
+### String:
+- Sequence of characters.
+- Human readable
+
+### Byte-Object:
+- Sequence of bytes.
+- Machine readable.
