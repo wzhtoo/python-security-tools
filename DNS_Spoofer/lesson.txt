@@ -1,0 +1,26 @@
+# Intercepting & Modifying Packets
+- Scapy can be used to:
+    - Create packets
+    - Analyse packets
+    - Send/receive packets
+
+- But it can't be used to intercept packets/flows.
+
+### Forward ip
+    - `echo 1 > /proc/sys/net/ipv4/ip_forward`
+
+### Running Program
+    - `iptables -I FORWARD -j NFQUEUE --queue-num 0`
+    - `iptables --flush`
+
+### forward change
+    - `iptables -I OUTPUT -j NFQUEUE --queue-num 0`
+    - `iptables -I INTPUT -j NFQUEUE --queue-num 0`
+    - `ping -c 1 www.bing.com`
+
+    - `iptables --flush`
+
+### Cant run netfilterqueue
+[NetfilterQueue Github &#128279;](https://github.com/oremanj/python-netfilterqueue)
+    - `apt-get install build-essential python3-dev libnetfilter-queue-dev`
+    - `pip install NetfilterQueue`
