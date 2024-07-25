@@ -1,0 +1,12 @@
+# Modifying Data in Http Layer
+- Edit requests/responses.
+- Replace download requests.
+- Inject code (html/Javascript).
+
+# Before command line
+- `service apache2 start`
+- `iptables --flush`
+- `iptables -I OUTPUT -j NFQUEUE --queue-num 0`
+- `iptables -I FORWARD -j NFQUEUE --queue-num 0`
+
+
